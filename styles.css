@@ -401,3 +401,7 @@ img.pos-bottom{object-position:50% 100%}
 .gallery.g3 .big img{aspect-ratio:auto;height:calc(100% - 28px)}
 @media (max-width:900px){.facts{grid-template-columns:1fr 1fr}.gallery.g3{grid-template-columns:1fr 1fr}.gallery.g3 .big img{height:auto;aspect-ratio:16/9}}
 @media (max-width:560px){.facts{grid-template-columns:1fr}}
+.hero-photo img.hero-exc{object-position:45% 60%}
+.feature+.feature{margin-top:24px}
+.feature.flip figure{order:2}
+@media (max-width:900px){.feature.flip figure{order:0}}
