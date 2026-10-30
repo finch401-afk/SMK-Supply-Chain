@@ -57,6 +57,40 @@ document.addEventListener('click', function (e) {
 (function () {
   var form = document.getElementById('quote-form');
   if (!form) return;
+  var ZH = (document.documentElement.lang || '').indexOf('zh') === 0;
+  var MAIL = '<a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a>';
+  var CALL = '<a href="tel:+18254885555">' + CONTACT_PHONE + '</a>';
+  var T = ZH ? {
+    name: '请填写您的姓名。',
+    email: '请填写您的邮箱。',
+    emailBad: '邮箱格式不正确，例如 name@company.ca。',
+    service: '请选择需要的服务。',
+    details: '请描述一下您的项目。',
+    detailsShort: '请再多写一点（至少 10 个字）。',
+    fix: '请检查标红的栏目。',
+    industry: '行业：',
+    sending: '发送中…',
+    sendingStatus: '正在发送您的询价…',
+    mailto: '<strong>询价还没有发出。</strong>您的邮件程序应该已经打开，内容已填好，请在邮件程序里点"发送"。如果没有打开，请直接发邮件到 ' + MAIL + '，或致电 ' + CALL + '。',
+    ok: function (e) { return '<strong>谢谢，您的询价已发送给 SMK。</strong>我们会在 24 小时内回复到 ' + e + '。'; },
+    bad: '<strong>询价没有发送成功。</strong>您填写的内容还在表单里，请再试一次，或发邮件到 ' + MAIL + '，或致电 ' + CALL + '。'
+  } : {
+    name: 'Please enter your name.',
+    email: 'Please enter your email address.',
+    emailBad: 'Please enter a valid email address, for example name@company.ca.',
+    service: 'Please choose the service you need.',
+    details: 'Please describe your project.',
+    detailsShort: 'Please add a little more detail (at least 10 characters).',
+    fix: 'Please check the highlighted fields.',
+    industry: 'Industry: ',
+    sending: 'Sending…',
+    sendingStatus: 'Sending your request…',
+    mailto: '<strong>Your request has not been sent yet.</strong> Your email app should open with these details filled in — press <em>Send</em> there to deliver it. If nothing opens, email ' + MAIL + ' or call ' + CALL + '.',
+    ok: function (e) { return '<strong>Thank you — your request was sent to SMK.</strong> We will reply to ' + e + ' within 24 hours.'; },
+    bad: '<strong>Your request could not be sent.</strong> Nothing was lost — your details are still in the form. Please try again, or email ' + MAIL + ' or call ' + CALL + '.'
+  };
+  function esc(v) { return v.replace(/[&<>"']/g, function (c) { return '&#' + c.charCodeAt(0) + ';'; }); }
+
   var connected = FORM_KEY.indexOf('YOUR_') !== 0;
   var notice = document.getElementById('form-notice');
   var status = document.getElementById('form-status');
@@ -72,27 +106,28 @@ document.addEventListener('click', function (e) {
     if (opt) opt.selected = true;
   }
   var ind = q.get('industry');
+  /* [value sent in the email, label shown on the Chinese page] */
   var indLabels = {
-    'packaging': 'Packaging & warehouse supplies',
-    'material-handling': 'Material handling equipment',
-    'industrial': 'Industrial & custom manufacturing',
-    'furniture': 'Commercial furniture & millwork'
+    'packaging': ['Packaging & warehouse supplies', '包装与仓储用品'],
+    'material-handling': ['Material handling equipment', '物料搬运设备'],
+    'industrial': ['Industrial & custom manufacturing', '工业与定制制造'],
+    'furniture': ['Commercial furniture & millwork', '商业家具与木作']
   };
   if (ind && indLabels[ind]) {
-    form.querySelector('#f-industry').value = indLabels[ind];
+    form.querySelector('#f-industry').value = indLabels[ind][0];
     var chip = document.getElementById('industry-chip');
-    chip.textContent = 'Industry: ' + indLabels[ind];
+    chip.textContent = T.industry + indLabels[ind][ZH ? 1 : 0];
     chip.hidden = false;
   }
 
   var rules = {
-    name: function (v) { return v ? '' : 'Please enter your name.'; },
+    name: function (v) { return v ? '' : T.name; },
     email: function (v) {
-      if (!v) return 'Please enter your email address.';
-      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Please enter a valid email address, for example name@company.ca.';
+      if (!v) return T.email;
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : T.emailBad;
     },
-    service: function (v) { return v ? '' : 'Please choose the service you need.'; },
-    details: function (v) { return v.length >= 10 ? '' : (v ? 'Please add a little more detail (at least 10 characters).' : 'Please describe your project.'); }
+    service: function (v) { return v ? '' : T.service; },
+    details: function (v) { return v.length >= 10 ? '' : (v ? T.detailsShort : T.details); }
   };
 
   function check(field) {
@@ -117,6 +152,7 @@ document.addEventListener('click', function (e) {
     status.innerHTML = html;
   }
 
+  /* Email field labels stay in English so every enquiry arrives in the same format */
   function summary() {
     var labels = [
       ['name', 'Name'], ['company', 'Company'], ['email', 'Email'], ['phone', 'Phone'],
@@ -124,10 +160,12 @@ document.addEventListener('click', function (e) {
       ['quantity', 'Quantity'], ['destination', 'Delivery destination'], ['timeline', 'Target timeline'],
       ['details', 'Project details']
     ];
-    return labels.map(function (p) {
+    var lines = labels.map(function (p) {
       var v = (form.elements[p[0]] && form.elements[p[0]].value.trim()) || '';
       return v ? p[1] + ': ' + v : '';
-    }).filter(Boolean).join('\n');
+    }).filter(Boolean);
+    if (ZH) lines.unshift('Site language: Chinese');
+    return lines.join('\n');
   }
 
   form.addEventListener('submit', function (e) {
@@ -137,19 +175,18 @@ document.addEventListener('click', function (e) {
       if (!check(form.elements[n]) && !firstBad) firstBad = form.elements[n];
     });
     if (firstBad) {
-      setStatus('bad', 'Please check the highlighted fields.');
+      setStatus('bad', T.fix);
       firstBad.focus();
       return;
     }
     if (form.elements.botcheck && form.elements.botcheck.checked) return;
 
     var service = form.elements.service.value;
-    var subject = 'Quote request: ' + service + ' — ' + form.elements.name.value.trim();
+    var subject = (ZH ? '[中文] ' : '') + 'Quote request: ' + service + ' — ' + form.elements.name.value.trim();
 
     if (!connected) {
       var href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(summary());
-      setStatus('info', '<strong>Your request has not been sent yet.</strong> Your email app should open with these details filled in — press <em>Send</em> there to deliver it. ' +
-        'If nothing opens, email <a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a> or call <a href="tel:+18254885555">' + CONTACT_PHONE + '</a>.');
+      setStatus('info', T.mailto);
       track('quote_mailto_fallback', { service: service });
       window.location.href = href;
       return;
@@ -160,10 +197,11 @@ document.addEventListener('click', function (e) {
     data.append('subject', subject);
     data.append('from_name', 'SMK website');
     data.append('replyto', form.elements.email.value.trim());
+    if (ZH) data.append('site_language', 'Chinese');
     submit.disabled = true;
-    submit.textContent = 'Sending…';
+    submit.textContent = T.sending;
     form.setAttribute('aria-busy', 'true');
-    setStatus('info', 'Sending your request…');
+    setStatus('info', T.sendingStatus);
 
     var ctrl = 'AbortController' in window ? new AbortController() : null;
     var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 20000) : null;
@@ -172,15 +210,15 @@ document.addEventListener('click', function (e) {
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (res) {
         if (res.ok && res.j.success) {
-          setStatus('ok', '<strong>Thank you — your request was sent to SMK.</strong> We will reply to ' + form.elements.email.value.trim() + '.');
-          track('generate_lead', { service: service });
+          setStatus('ok', T.ok(esc(form.elements.email.value.trim())));
+          track('generate_lead', { service: service, language: ZH ? 'zh' : 'en' });
           form.reset();
         } else {
           throw new Error(res.j.message || 'Submission failed');
         }
       })
       .catch(function () {
-        setStatus('bad', '<strong>Your request could not be sent.</strong> Nothing was lost — your details are still in the form. Please try again, or email <a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a> or call <a href="tel:+18254885555">' + CONTACT_PHONE + '</a>.');
+        setStatus('bad', T.bad);
       })
       .then(function () {
         if (timer) clearTimeout(timer);
