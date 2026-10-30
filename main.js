@@ -229,3 +229,47 @@ document.addEventListener('click', function (e) {
       });
   });
 })();
+
+/* Photo viewer for case photos: opens full size, arrows step through the photos of the same case */
+(function () {
+  var links = document.querySelectorAll('.proj a.ph');
+  if (!links.length || typeof HTMLDialogElement !== 'function') return;
+  var ZH = (document.documentElement.lang || '').indexOf('zh') === 0;
+  var dlg = document.createElement('dialog');
+  dlg.className = 'viewer';
+  dlg.setAttribute('aria-label', ZH ? '照片查看' : 'Photo viewer');
+  dlg.innerHTML = '<p class="v-count"></p><button class="v-close" type="button" aria-label="' + (ZH ? '关闭' : 'Close') + '">&times;</button>' +
+    '<button class="v-prev" type="button" aria-label="' + (ZH ? '上一张' : 'Previous photo') + '">&#8249;</button>' +
+    '<figure><img alt=""><figcaption></figcaption></figure>' +
+    '<button class="v-next" type="button" aria-label="' + (ZH ? '下一张' : 'Next photo') + '">&#8250;</button>';
+  document.body.appendChild(dlg);
+  var img = dlg.querySelector('img'), cap = dlg.querySelector('figcaption'), count = dlg.querySelector('.v-count');
+  var group = [], i = 0;
+  function show() {
+    var a = group[i];
+    img.src = a.getAttribute('href');
+    img.alt = a.getAttribute('data-cap') || '';
+    cap.textContent = a.getAttribute('data-cap') || '';
+    count.textContent = (i + 1) + ' / ' + group.length;
+    dlg.querySelector('.v-prev').hidden = dlg.querySelector('.v-next').hidden = group.length < 2;
+  }
+  function step(d) { i = (i + d + group.length) % group.length; show(); }
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      group = Array.prototype.slice.call(a.closest('.proj').querySelectorAll('a.ph'));
+      i = group.indexOf(a);
+      show();
+      dlg.showModal();
+    });
+  });
+  dlg.querySelector('.v-close').addEventListener('click', function () { dlg.close(); });
+  dlg.querySelector('.v-prev').addEventListener('click', function () { step(-1); });
+  dlg.querySelector('.v-next').addEventListener('click', function () { step(1); });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+  dlg.addEventListener('close', function () { img.removeAttribute('src'); });
+})();
