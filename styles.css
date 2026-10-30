@@ -54,9 +54,9 @@ section{padding:clamp(56px,8vw,96px) 0}
 .site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
 .site-header .wrap{display:flex;align-items:center;gap:24px;min-height:76px}
 .brand{display:flex;flex-direction:column;text-decoration:none;color:var(--navy);line-height:1}
-.brand b{font:800 28px/1 var(--head);letter-spacing:-.02em}
+.brand b{font:800 28px/1 var(--head);letter-spacing:.03em}
 .brand b span{color:var(--orange)}
-.brand small{font:700 10px/1 var(--body);letter-spacing:.28em;margin-top:5px}
+.brand small{font:700 10px/1 var(--head);letter-spacing:.12em;margin-top:6px;padding-left:.09em}
 .mainnav{margin-left:auto}
 .mainnav ul{list-style:none;display:flex;gap:4px}
 .mainnav a{display:block;padding:10px 12px;font-weight:600;font-size:15px;text-decoration:none;color:var(--ink);border-radius:4px}
@@ -335,8 +335,8 @@ section{padding:clamp(56px,8vw,96px) 0}
 @media (max-width:560px){
   body{font-size:16px}
   .site-header .wrap{min-height:64px}
-  .brand b{font-size:24px}
-  .brand small{font-size:9px}
+  .brand b{font-size:26px}
+  .brand small{font-size:9.5px;letter-spacing:.103em}
   .header-cta{padding:8px 12px;font-size:14px;min-height:42px}
   .menu-btn span{position:absolute;left:-9999px}
   .btnrow .btn{width:100%}
@@ -417,3 +417,4 @@ html:lang(zh) .brand b{font-family:var(--head)}
 html:lang(zh) .eyebrow,html:lang(zh) .nwr dt,html:lang(zh) .proj-cols h3,html:lang(zh) .svc-cols h3,html:lang(zh) .ind h3,html:lang(zh) .case .cat,html:lang(zh) .flow-zones,html:lang(zh) .steps li:before{letter-spacing:.04em}
 html:lang(zh) .steps li:before{content:"第 " counter(s) " 步"}
 @media (min-width:561px){.nw{display:inline-block}}
+.svc-photo img.pos-crane{object-position:50% 68%}
