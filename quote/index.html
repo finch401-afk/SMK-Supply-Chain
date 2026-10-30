@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Request a Quote | SMK Supply Chain</title>
+<meta name="description" content="Request a quote for China sourcing, custom manufacturing, quality control, freight, warehousing or delivery to Canada. Tell SMK Supply Chain what you need to source, make or ship.">
+<link rel="canonical" href="https://smksupplychain.com/quote/">
+<meta name="theme-color" content="#0b2340">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S.M.K Supply Chain">
+<meta property="og:title" content="Request a Quote | SMK Supply Chain">
+<meta property="og:description" content="Request a quote for China sourcing, custom manufacturing, quality control, freight, warehousing or delivery to Canada. Tell SMK Supply Chain what you need to source, make or ship.">
+<meta property="og:url" content="https://smksupplychain.com/quote/">
+<meta property="og:image" content="https://smksupplychain.com/og-image.jpg">
+<meta property="og:image:alt" content="Pallets of plastic packaging film staged beside a container truck for loading">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&amp;display=swap">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="S.M.K Supply Chain, home"><b>S.<span>M</span>.K</b><small>SUPPLY CHAIN</small></a>
+    <nav class="mainnav" id="mainnav" aria-label="Main"><ul><li><a href="../index.html">Home</a></li><li><a href="../services/index.html">Services</a></li><li><a href="../industries/index.html">Industries</a></li><li><a href="../projects/index.html">Projects</a></li><li><a href="../about/index.html">About</a></li><li class="mobile-only"><a href="../quote/index.html" aria-current="page">Request a Quote</a></li><li class="mobile-only"><a href="tel:+18254885555">Call 825-488-5555</a></li></ul></nav>
+    <a class="btn primary header-cta" href="../quote/index.html">Request a Quote</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none"/></svg><span>Menu</span></button>
+  </div>
+</header>
+<main id="main">
+<section class="pagehero" aria-labelledby="ph">
+  <div class="wrap">
+    <p class="crumbs"><a href="../index.html">Home</a> / Request a Quote</p>
+    <h1 id="ph">Request a Quote</h1>
+    <p class="lede">Tell us what you need to source, make or ship. Only four fields are required. Add more detail if you have it.</p>
+  </div>
+</section>
+<section style="padding-top:48px">
+  <div class="wrap quote-grid">
+    <form class="qform" id="quote-form" novalidate aria-labelledby="form-h">
+      <h2 id="form-h" class="sr-only" style="position:absolute;left:-9999px">Quote request form</h2>
+      <div class="notice" id="form-notice" role="note">
+        <div><strong>Online submission is not connected yet.</strong>When you press Send, your email app will open with your details filled in, ready to send to info@smksupplychain.com. You can also call <a href="tel:+18254885555">825-488-5555</a>.</div>
+      </div>
+      <p class="chip" id="industry-chip" hidden></p>
+      <input type="hidden" name="industry" id="f-industry" value="">
+      <fieldset>
+        <legend>About you</legend>
+        <p class="hint">Fields marked <span class="req" style="color:var(--orange)">*</span> are required.</p>
+        <div class="fgrid">
+          <div class="field"><label for="f-name">Name <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="f-name-err"><p class="err" id="f-name-err" role="alert"></p></div>
+          <div class="field"><label for="f-company">Company <span class="opt">(optional)</span></label><input id="f-company" name="company" type="text" autocomplete="organization"></div>
+          <div class="field"><label for="f-email">Email <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required aria-required="true" aria-describedby="f-email-err" inputmode="email"><p class="err" id="f-email-err" role="alert"></p></div>
+          <div class="field"><label for="f-phone">Phone <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Your project</legend>
+        <p class="hint">Rough answers are fine. We will follow up on anything we need.</p>
+        <div class="fgrid">
+          <div class="field full"><label for="f-service">Service needed <span class="req" aria-hidden="true">*</span></label><select id="f-service" name="service" required aria-required="true" aria-describedby="f-service-err"><option value="">Choose a service…</option><option value="Full project: sourcing to delivery" data-key="full-project">Full project: sourcing to delivery</option><option value="China Sourcing" data-key="china-sourcing">China Sourcing</option><option value="Product Development &amp; Custom Manufacturing" data-key="custom-manufacturing">Product Development &amp; Custom Manufacturing</option><option value="Quality Control" data-key="quality-control">Quality Control</option><option value="Freight &amp; Customs Coordination" data-key="freight-customs">Freight &amp; Customs Coordination</option><option value="Warehousing" data-key="warehousing">Warehousing</option><option value="Final Delivery" data-key="final-delivery">Final Delivery</option><option value="Not sure yet" data-key="not-sure">Not sure yet</option></select><p class="err" id="f-service-err" role="alert"></p></div>
+          <div class="field"><label for="f-product">Product / cargo <span class="opt">(optional)</span></label><p class="desc" id="f-product-desc">For example: printed cartons, steel racks, one excavator</p><input id="f-product" name="product" type="text" aria-describedby="f-product-desc"></div>
+          <div class="field"><label for="f-quantity">Quantity <span class="opt">(optional)</span></label><p class="desc" id="f-quantity-desc">Units, cartons, pallets or containers</p><input id="f-quantity" name="quantity" type="text" aria-describedby="f-quantity-desc"></div>
+          <div class="field"><label for="f-destination">Delivery destination <span class="opt">(optional)</span></label><p class="desc" id="f-destination-desc">City and province</p><input id="f-destination" name="destination" type="text" autocomplete="address-level2" aria-describedby="f-destination-desc"></div>
+          <div class="field"><label for="f-timeline">Target timeline <span class="opt">(optional)</span></label><p class="desc" id="f-timeline-desc">When you need the goods delivered</p><input id="f-timeline" name="timeline" type="text" aria-describedby="f-timeline-desc"></div>
+          <div class="field full"><label for="f-details">Project details <span class="req" aria-hidden="true">*</span></label><p class="desc" id="f-details-desc">Specifications, materials, target price, current supplier, or anything else that helps. You can send drawings or photos by email after submitting.</p><textarea id="f-details" name="details" required aria-required="true" aria-describedby="f-details-desc f-details-err"></textarea><p class="err" id="f-details-err" role="alert"></p></div>
+        </div>
+      </fieldset>
+      <label class="hp" aria-hidden="true">Leave this empty <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+      <div class="formfoot">
+        <button class="btn primary" type="submit">Send request</button>
+        <p>By sending, you agree that SMK may use these details to reply to your request. See our <a href="../privacy/index.html">Privacy Policy</a>.</p>
+      </div>
+      <div class="status" id="form-status" role="status" aria-live="polite" tabindex="-1"></div>
+      <noscript><p class="status bad">This form needs JavaScript. Please email <a href="mailto:info@smksupplychain.com">info@smksupplychain.com</a> or call <a href="tel:+18254885555">825-488-5555</a>.</p></noscript>
+    </form>
+    <aside class="aside" aria-label="Other ways to reach SMK">
+      <div class="box">
+        <h2>What happens next</h2>
+        <ol>
+          <li>We reply within 24 hours and ask for anything missing.</li>
+          <li>We assess suppliers, costs, risks and the route.</li>
+          <li>You receive a practical plan and quotation to approve.</li>
+        </ol>
+      </div>
+      <div class="box">
+        <h2>Prefer to talk?</h2>
+        <div class="contactlist">
+          <div><span>Email, including drawings and photos</span><a href="mailto:info@smksupplychain.com">info@smksupplychain.com</a></div>
+          <div><span>Phone</span><a href="tel:+18254885555">825-488-5555</a></div>
+          <div><span>Office</span><a href="https://www.google.com/maps/search/?api=1&amp;query=7803%2035%20St%20SE%20A%2C%20Calgary%2C%20AB" target="_blank" rel="noopener">7803 35 St SE A, Calgary, AB</a></div>
+        </div>
+      </div>
+      <div class="box" style="border:0">
+        <h2>Not ready for a quote?</h2>
+        <p class="muted">Read how each service works and what to prepare.</p>
+        <a class="textlink" href="../services/index.html">Explore Our Services</a>
+      </div>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="../index.html" aria-label="S.M.K Supply Chain, home"><b>S.<span>M</span>.K</b><small>SUPPLY CHAIN</small></a>
+        <p>China sourcing and import coordination for Canadian businesses, from our office in Calgary, Alberta.</p>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="../services/index.html#china-sourcing">China Sourcing</a></li>
+          <li><a href="../services/index.html#custom-manufacturing">Product Development &amp; Custom Manufacturing</a></li>
+          <li><a href="../services/index.html#quality-control">Quality Control</a></li>
+          <li><a href="../services/index.html#freight-customs">Freight &amp; Customs Coordination</a></li>
+          <li><a href="../services/index.html#warehousing">Warehousing</a></li>
+          <li><a href="../services/index.html#final-delivery">Final Delivery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="../industries/index.html">Industries</a></li>
+          <li><a href="../projects/index.html">Projects</a></li>
+          <li><a href="../about/index.html">About</a></li>
+          <li><a href="../quote/index.html">Request a Quote</a></li>
+          <li><a href="../privacy/index.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:info@smksupplychain.com">info@smksupplychain.com</a></li>
+          <li><a href="tel:+18254885555">825-488-5555</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=7803%2035%20St%20SE%20A%2C%20Calgary%2C%20AB" target="_blank" rel="noopener">7803 35 St SE A<br>Calgary, AB<span class="sr"> (opens Google Maps)</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bar"><span>&copy; 2026 S.M.K Supply Chain</span><span>Calgary, Alberta, Canada</span></div>
+  </div>
+</footer>
+<script src="../main.js" defer></script>
+</body>
+</html>
