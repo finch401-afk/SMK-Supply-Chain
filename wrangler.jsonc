@@ -1,0 +1,10 @@
+{
+  // Static-assets Worker for smksupplychain.com, built from this repository by Cloudflare.
+  "name": "smk-supply-chain",
+  "compatibility_date": "2026-10-23",
+  "assets": {
+    "directory": ".",
+    // Show 404.html (with a 404 status) for addresses that do not exist, instead of an empty page.
+    "not_found_handling": "404-page"
+  }
+}
