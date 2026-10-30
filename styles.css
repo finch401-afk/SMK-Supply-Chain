@@ -418,3 +418,13 @@ html:lang(zh) .eyebrow,html:lang(zh) .nwr dt,html:lang(zh) .proj-cols h3,html:la
 html:lang(zh) .steps li:before{content:"第 " counter(s) " 步"}
 @media (min-width:561px){.nw{display:inline-block}}
 .svc-photo img.pos-crane{object-position:50% 68%}
+/* project photo galleries: whole photos, no cropping */
+.pgal{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px 10px;align-items:start;margin-top:20px}
+.pgal figure{margin:0}
+.pgal a{display:block;background:var(--soft)}
+.pgal img{width:100%;height:auto;display:block}
+.pgal a:hover img{opacity:.9}
+.pgal figcaption{font-size:14px;color:var(--muted);padding-top:6px}
+.pgal.single{grid-template-columns:minmax(0,420px)}
+.pagehero .jump{margin-top:22px}
+@media (max-width:560px){.pgal{grid-template-columns:1fr 1fr;gap:12px 8px}.pgal.single{grid-template-columns:1fr}.pgal figcaption{font-size:13px}}
