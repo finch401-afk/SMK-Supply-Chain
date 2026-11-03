@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>集装箱装箱计算器：20GP、40GP、40HQ | SMK Supply Chain</title>
+<meta name="description" content="免费集装箱装箱计算器。输入纸箱尺寸、重量和箱数，算出 20 尺、40 尺普柜和 40 尺高柜各能装多少箱，以及拼箱还是整柜更划算。">
+<link rel="canonical" href="https://smksupplychain.com/zh/tools/container-calculator/">
+<meta name="theme-color" content="#0b2340">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S.M.K Supply Chain">
+<meta property="og:title" content="集装箱装箱计算器 | SMK Supply Chain">
+<meta property="og:description" content="20GP、40GP、40HQ 各能装多少箱？输入纸箱尺寸和箱数即可算出，并给出拼箱还是整柜的建议。">
+<meta property="og:url" content="https://smksupplychain.com/zh/tools/container-calculator/">
+<meta property="og:image" content="https://smksupplychain.com/og-image.jpg">
+<meta property="og:image:alt" content="Tracked excavator secured on a flat-rack platform before dispatch">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../../favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&amp;display=swap">
+<link rel="stylesheet" href="../../../styles.css?v=20261030d">
+<link rel="stylesheet" href="../../../calculator.css?v=20261102b">
+<link rel="alternate" hreflang="en-CA" href="https://smksupplychain.com/tools/container-calculator/">
+<link rel="alternate" hreflang="zh-Hans" href="https://smksupplychain.com/zh/tools/container-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://smksupplychain.com/tools/container-calculator/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"集装箱装箱计算器","url":"https://smksupplychain.com/zh/tools/container-calculator/","inLanguage":"zh-Hans","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"CAD"},"provider":{"@type":"Organization","name":"S.M.K Supply Chain","url":"https://smksupplychain.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/zh/" aria-label="S.M.K Supply Chain 首页"><b>S.<span>M</span>.K</b><small>SUPPLY CHAIN</small></a>
+    <nav class="mainnav" id="mainnav" aria-label="主导航"><ul><li><a href="/zh/">首页</a></li><li><a href="/zh/services/">服务</a></li><li><a href="/zh/industries/">行业</a></li><li><a href="/zh/projects/">项目案例</a></li><li><a href="/zh/about/">关于我们</a></li><li class="mobile-only"><a href="/zh/quote/">获取报价</a></li><li class="mobile-only"><a href="/tools/container-calculator/" lang="en" hreflang="en">English</a></li><li class="mobile-only"><a href="tel:+18254885555">致电 825-488-5555</a></li></ul></nav>
+    <a class="lang-switch" href="/tools/container-calculator/" lang="en" hreflang="en">EN</a>
+    <a class="btn primary header-cta" href="/zh/quote/">获取报价</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none"/></svg><span>菜单</span></button>
+  </div>
+</header>
+<main id="main">
+<section class="pagehero" aria-labelledby="ph">
+  <div class="wrap">
+    <p class="crumbs"><a href="/zh/">首页</a> / 集装箱装箱计算器</p>
+    <h1 id="ph">集装箱装箱计算器</h1>
+    <p class="lede">输入纸箱尺寸，算出 20GP、40GP、40HQ 各能装多少箱。再填上重量和箱数，就能知道需要几个柜，以及拼箱还是整柜更划算。</p>
+  </div>
+</section>
+<section style="padding-top:48px" aria-label="计算器">
+  <div class="wrap cc-grid" id="cc">
+    <form class="qform cc-form" onsubmit="return false" aria-label="纸箱信息">
+      <div class="fgrid">
+        <fieldset class="cc-group">
+          <legend>单位</legend>
+          <div class="cc-seg"><label><input type="radio" name="unit" value="cm" checked><span>厘米 / 公斤</span></label><label><input type="radio" name="unit" value="in"><span>英寸 / 磅</span></label></div>
+        </fieldset>
+        <fieldset class="cc-group">
+          <legend>纸箱外尺寸（<span data-unit-len>cm</span>）</legend>
+          <div class="cc-dims">
+            <div class="field"><label for="cc-l">长</label><input id="cc-l" type="text" inputmode="decimal" autocomplete="off" placeholder="60"></div>
+            <div class="field"><label for="cc-w">宽</label><input id="cc-w" type="text" inputmode="decimal" autocomplete="off" placeholder="40"></div>
+            <div class="field"><label for="cc-h">高</label><input id="cc-h" type="text" inputmode="decimal" autocomplete="off" placeholder="40"></div>
+          </div>
+        </fieldset>
+        <div class="field"><label for="cc-kg">单箱毛重（<span data-unit-wt>kg</span>）<span class="opt">（选填）</span></label><input id="cc-kg" type="text" inputmode="decimal" autocomplete="off"></div>
+        <div class="field"><label for="cc-qty">箱数 <span class="opt">（选填）</span></label><input id="cc-qty" type="text" inputmode="numeric" autocomplete="off"></div>
+        <label class="cc-check"><input id="cc-up" type="checkbox" checked><span>纸箱必须正放（此面朝上）<small>如果纸箱可以侧放或倒放，请取消勾选。</small></span></label>
+        <div class="field"><label for="cc-product">箱内是什么货？<span class="opt">（选填）</span></label><p class="desc" id="cc-product-desc">发送询价时会一起带上。</p><input id="cc-product" type="text" autocomplete="off" aria-describedby="cc-product-desc"></div>
+        <p style="margin:0"><button type="button" class="cc-linkbtn" id="cc-example">试一个例子</button></p>
+      </div>
+    </form>
+    <div>
+      <div id="cc-out" aria-live="polite"><p class="cc-empty">输入纸箱尺寸后，这里会显示每种柜型能装多少箱。</p></div>
+      <noscript><p class="status bad">这个计算器需要开启 JavaScript。您也可以把纸箱尺寸发到 <a href="mailto:info@smksupplychain.com">info@smksupplychain.com</a>，我们帮您算。</p></noscript>
+      <div class="cc-actions">
+        <a class="btn primary" id="cc-quote" href="/zh/quote/?service=freight-customs">按这个装箱方案获取运费报价</a>
+        <button type="button" class="btn outline" id="cc-copy">复制计算结果链接</button>
+        <p id="cc-copy-status" role="status"></p>
+      </div>
+      <p class="cc-fine">计算假设所有纸箱尺寸相同、整齐码放。实际装柜因纸箱鼓包、加固材料和装货间隙，通常会少装 5–10%，重的纸箱应放在底层。尺寸只在您的浏览器里计算，不会上传。订舱前由 SMK 确认最终装柜方案。</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--soft)" aria-labelledby="spec-h">
+  <div class="wrap">
+    <div class="sechead"><div><p class="eyebrow">参考数据</p><h2 id="spec-h">计算器使用的标准柜尺寸。</h2></div><p>不同箱东的柜子内尺寸和载重略有差别。柜门尺寸决定了单件货物最大能有多大。</p></div>
+    <div class="cc-tablewrap" style="background:#fff">
+      <table class="cc-specs">
+        <thead><tr><th scope="col">柜型</th><th scope="col">内尺寸 长 × 宽 × 高</th><th scope="col">柜门 宽 × 高</th><th scope="col">容积</th><th scope="col">实际可装</th><th scope="col">最大载重</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">20 尺普柜 (20GP)</th><td>5.90 × 2.35 × 2.39 米</td><td>2.34 × 2.28 米</td><td>33.2 CBM</td><td>约 26–28 CBM</td><td>约 28,200 kg</td></tr>
+          <tr><th scope="row">40 尺普柜 (40GP)</th><td>12.03 × 2.35 × 2.39 米</td><td>2.34 × 2.28 米</td><td>67.7 CBM</td><td>约 55–58 CBM</td><td>约 26,700 kg</td></tr>
+          <tr><th scope="row">40 尺高柜 (40HQ)</th><td>12.03 × 2.35 × 2.70 米</td><td>2.34 × 2.59 米</td><td>76.4 CBM</td><td>约 65–68 CBM</td><td>约 26,500 kg</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="faq-h">
+  <div class="wrap faqgrid">
+    <div><p class="eyebrow">常见问题</p><h2 id="faq-h">怎么看计算结果。</h2><p class="muted">拿不准？发邮件到 <a href="mailto:info@smksupplychain.com">info@smksupplychain.com</a> 或致电 <a href="tel:+18254885555">825-488-5555</a>。</p></div>
+    <div class="faq"><details><summary>为什么箱数比“柜子容积 ÷ 单箱体积”少？</summary><div class="ans"><p>纸箱不能切开去填靠墙和顶部的空隙。计算器会尝试纸箱的各种摆放方向，包括两种方向混合摆放，然后给出能装最多整箱的方案。体积利用率一般在 75–90%。</p></div></details><details><summary>拼箱还是整柜？</summary><div class="ans"><p>大致来说，低于约 13 CBM 拼箱 (LCL) 通常更便宜；13 到 20 CBM 之间建议拼箱和 20 尺柜都报价对比；超过 20 CBM 一般整柜更划算。运价经常变化，接近分界时请让我们两种都报。</p></div></details><details><summary>拼箱的 W/M 是什么意思？</summary><div class="ans"><p>拼箱按“重量吨或体积吨取大值”计费：1 立方米或 1,000 公斤算 1 个计费单位，取较大的那个。例如 8 CBM、3,000 kg 的货按 8 W/M 计费。</p></div></details><details><summary>为什么显示“受重量限制”？</summary><div class="ans"><p>纸箱很重时，柜子还没装满就已经达到最大载重。中国和加拿大的公路限重可能更低，重货请在订舱前和我们确认。</p></div></details><details><summary>能算多种尺寸混装或托盘吗？</summary><div class="ans"><p>目前一次只能算一种纸箱尺寸。多种尺寸混装、托盘货或超大件，请<a href="/zh/quote/?service=freight-customs">把装箱单发给我们</a>，我们帮您做装柜方案。</p></div></details></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="/zh/" aria-label="S.M.K Supply Chain 首页"><b>S.<span>M</span>.K</b><small>SUPPLY CHAIN</small></a>
+        <p>位于加拿大阿尔伯塔省卡尔加里，为加拿大企业提供中国采购与进口协调服务。</p>
+      </div>
+      <div>
+        <h2>服务</h2>
+        <ul>
+          <li><a href="/zh/services/#china-sourcing">中国采购</a></li>
+          <li><a href="/zh/services/#custom-manufacturing">产品开发与定制生产</a></li>
+          <li><a href="/zh/services/#quality-control">质量检验</a></li>
+          <li><a href="/zh/services/#freight-customs">运输与清关协调</a></li>
+          <li><a href="/zh/services/#warehousing">仓储</a></li>
+          <li><a href="/zh/services/#final-delivery">末端配送</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>公司</h2>
+        <ul>
+          <li><a href="/zh/industries/">行业</a></li>
+          <li><a href="/zh/projects/">项目案例</a></li>
+          <li><a href="/zh/about/">关于我们</a></li>
+          <li><a href="/zh/tools/container-calculator/" aria-current="page">装箱计算器</a></li>
+          <li><a href="/zh/quote/">获取报价</a></li>
+          <li><a href="/privacy/">隐私政策（英文）</a></li>
+          <li><a href="/" lang="en">English</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>联系方式</h2>
+        <ul>
+          <li><a href="mailto:info@smksupplychain.com">info@smksupplychain.com</a></li>
+          <li><a href="tel:+18254885555">825-488-5555</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=7803%2035%20St%20SE%20A%2C%20Calgary%2C%20AB" target="_blank" rel="noopener">7803 35 St SE A<br>Calgary, AB<span class="sr">（在 Google 地图中打开）</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bar"><span>&copy; 2026 S.M.K Supply Chain</span><span>加拿大 阿尔伯塔省 卡尔加里</span></div>
+  </div>
+</footer>
+<script src="../../../main.js?v=20261102a" defer></script>
+<script src="../../../calculator.js?v=20261102b" defer></script>
+</body>
+</html>

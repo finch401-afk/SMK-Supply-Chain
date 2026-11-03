@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Container Loading Calculator: 20GP, 40GP, 40HQ | SMK Supply Chain</title>
+<meta name="description" content="Free container loading calculator. Enter your carton size, weight and quantity to see how many cartons fit in a 20ft, 40ft or 40ft high cube container, and whether LCL or a full container makes sense.">
+<link rel="canonical" href="https://smksupplychain.com/tools/container-calculator/">
+<meta name="theme-color" content="#0b2340">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S.M.K Supply Chain">
+<meta property="og:title" content="Container Loading Calculator | SMK Supply Chain">
+<meta property="og:description" content="How many cartons fit in a 20GP, 40GP or 40HQ? Enter your carton size and quantity to find out, and see whether LCL or a full container makes sense.">
+<meta property="og:url" content="https://smksupplychain.com/tools/container-calculator/">
+<meta property="og:image" content="https://smksupplychain.com/og-image.jpg">
+<meta property="og:image:alt" content="Tracked excavator secured on a flat-rack platform before dispatch">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&amp;display=swap">
+<link rel="stylesheet" href="../../styles.css?v=20261030d">
+<link rel="stylesheet" href="../../calculator.css?v=20261102b">
+<link rel="alternate" hreflang="en-CA" href="https://smksupplychain.com/tools/container-calculator/">
+<link rel="alternate" hreflang="zh-Hans" href="https://smksupplychain.com/zh/tools/container-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://smksupplychain.com/tools/container-calculator/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Container Loading Calculator","url":"https://smksupplychain.com/tools/container-calculator/","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"CAD"},"provider":{"@type":"Organization","name":"S.M.K Supply Chain","url":"https://smksupplychain.com/"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="S.M.K Supply Chain, home"><b>S.<span>M</span>.K</b><small>SUPPLY CHAIN</small></a>
+    <nav class="mainnav" id="mainnav" aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/services/">Services</a></li><li><a href="/industries/">Industries</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li><li class="mobile-only"><a href="/quote/">Request a Quote</a></li><li class="mobile-only"><a href="/zh/tools/container-calculator/" lang="zh-Hans" hreflang="zh-Hans">中文</a></li><li class="mobile-only"><a href="tel:+18254885555">Call 825-488-5555</a></li></ul></nav>
+    <a class="lang-switch" href="/zh/tools/container-calculator/" lang="zh-Hans" hreflang="zh-Hans">中文</a>
+    <a class="btn primary header-cta" href="/quote/">Request a Quote</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none"/></svg><span>Menu</span></button>
+  </div>
+</header>
+<main id="main">
+<section class="pagehero" aria-labelledby="ph">
+  <div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> / Container Loading Calculator</p>
+    <h1 id="ph">Container Loading Calculator</h1>
+    <p class="lede">Enter your carton size to see how many cartons fit in a 20GP, 40GP or 40HQ container. Add the weight and quantity to see how many containers you need, and whether LCL or a full container makes more sense.</p>
+  </div>
+</section>
+<section style="padding-top:48px" aria-label="Calculator">
+  <div class="wrap cc-grid" id="cc">
+    <form class="qform cc-form" onsubmit="return false" aria-label="Carton details">
+      <div class="fgrid">
+        <fieldset class="cc-group">
+          <legend>Units</legend>
+          <div class="cc-seg"><label><input type="radio" name="unit" value="cm" checked><span>cm / kg</span></label><label><input type="radio" name="unit" value="in"><span>in / lb</span></label></div>
+        </fieldset>
+        <fieldset class="cc-group">
+          <legend>Carton size (outside, <span data-unit-len>cm</span>)</legend>
+          <div class="cc-dims">
+            <div class="field"><label for="cc-l">Length</label><input id="cc-l" type="text" inputmode="decimal" autocomplete="off" placeholder="60"></div>
+            <div class="field"><label for="cc-w">Width</label><input id="cc-w" type="text" inputmode="decimal" autocomplete="off" placeholder="40"></div>
+            <div class="field"><label for="cc-h">Height</label><input id="cc-h" type="text" inputmode="decimal" autocomplete="off" placeholder="40"></div>
+          </div>
+        </fieldset>
+        <div class="field"><label for="cc-kg">Weight per carton (<span data-unit-wt>kg</span>) <span class="opt">(optional)</span></label><input id="cc-kg" type="text" inputmode="decimal" autocomplete="off"></div>
+        <div class="field"><label for="cc-qty">Number of cartons <span class="opt">(optional)</span></label><input id="cc-qty" type="text" inputmode="numeric" autocomplete="off"></div>
+        <label class="cc-check"><input id="cc-up" type="checkbox" checked><span>Keep cartons upright<small>Untick if cartons can be laid on their side.</small></span></label>
+        <div class="field"><label for="cc-product">What is in the cartons? <span class="opt">(optional)</span></label><p class="desc" id="cc-product-desc">Added to your quote request if you send one.</p><input id="cc-product" type="text" autocomplete="off" aria-describedby="cc-product-desc"></div>
+        <p style="margin:0"><button type="button" class="cc-linkbtn" id="cc-example">Try an example</button></p>
+      </div>
+    </form>
+    <div>
+      <div id="cc-out" aria-live="polite"><p class="cc-empty">Enter a carton size to see how many cartons fit in each container.</p></div>
+      <noscript><p class="status bad">This calculator needs JavaScript. You can email your carton sizes to <a href="mailto:info@smksupplychain.com">info@smksupplychain.com</a> and we will work out the loading for you.</p></noscript>
+      <div class="cc-actions">
+        <a class="btn primary" id="cc-quote" href="/quote/?service=freight-customs">Get a freight quote for this load</a>
+        <button type="button" class="btn outline" id="cc-copy">Copy link to this calculation</button>
+        <p id="cc-copy-status" role="status"></p>
+      </div>
+      <p class="cc-fine">Results assume identical rectangular cartons stacked in neat rows. Real loading usually fits 5–10% less because of carton bulge, dunnage and loading gaps, and the heaviest cartons should go on the bottom. Your sizes are calculated in your browser and are not sent anywhere. SMK confirms the final loading plan before booking.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--soft)" aria-labelledby="spec-h">
+  <div class="wrap">
+    <div class="sechead"><div><p class="eyebrow">Reference</p><h2 id="spec-h">Standard container sizes used in this calculator.</h2></div><p>Inside dimensions and payload vary slightly between container owners. The door opening limits the largest single item you can load.</p></div>
+    <div class="cc-tablewrap" style="background:#fff">
+      <table class="cc-specs">
+        <thead><tr><th scope="col">Container</th><th scope="col">Inside L × W × H</th><th scope="col">Door W × H</th><th scope="col">Volume</th><th scope="col">Practical load</th><th scope="col">Max payload</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">20' standard (20GP)</th><td>5.90 × 2.35 × 2.39 m<br><small>19'4" × 7'8" × 7'10"</small></td><td>2.34 × 2.28 m</td><td>33.2 CBM</td><td>about 26–28 CBM</td><td>about 28,200 kg</td></tr>
+          <tr><th scope="row">40' standard (40GP)</th><td>12.03 × 2.35 × 2.39 m<br><small>39'6" × 7'8" × 7'10"</small></td><td>2.34 × 2.28 m</td><td>67.7 CBM</td><td>about 55–58 CBM</td><td>about 26,700 kg</td></tr>
+          <tr><th scope="row">40' high cube (40HQ)</th><td>12.03 × 2.35 × 2.70 m<br><small>39'6" × 7'8" × 8'10"</small></td><td>2.34 × 2.59 m</td><td>76.4 CBM</td><td>about 65–68 CBM</td><td>about 26,500 kg</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="faq-h">
+  <div class="wrap faqgrid">
+    <div><p class="eyebrow">Questions</p><h2 id="faq-h">How to read the results.</h2><p class="muted">Not sure about your shipment? Email <a href="mailto:info@smksupplychain.com">info@smksupplychain.com</a> or call <a href="tel:+18254885555">825-488-5555</a>.</p></div>
+    <div class="faq"><details><summary>Why is the carton count lower than container volume ÷ carton volume?</summary><div class="ans"><p>Cartons cannot be cut to fill the gaps along the walls and ceiling. The calculator tries every way of turning the cartons, including mixing two directions, and shows the arrangement that fits the most whole cartons. Volume used is usually 75–90%.</p></div></details><details><summary>Should I ship LCL or a full container?</summary><div class="ans"><p>As a rough guide, under about 13 CBM LCL (shared container) is usually cheaper. Between about 13 and 20 CBM it is worth comparing LCL with a 20GP. Above that, a full container is normally the better choice. Rates change, so ask us for both prices when you are close to the line.</p></div></details><details><summary>What does W/M mean for LCL?</summary><div class="ans"><p>LCL is charged per "weight or measure": 1 cubic metre or 1,000 kg, whichever is greater. A shipment of 8 CBM weighing 3,000 kg is charged as 8 W/M.</p></div></details><details><summary>Why does it say "limited by weight"?</summary><div class="ans"><p>Heavy cartons can reach the container's maximum payload before the space is full. Road weight limits in China and Canada can be lower still, so heavy loads should be checked with us before booking.</p></div></details><details><summary>Can it plan mixed carton sizes or pallets?</summary><div class="ans"><p>This version handles one carton size at a time. For mixed sizes, pallets or oversized cargo, <a href="/quote/?service=freight-customs">send us your packing list</a> and we will prepare a loading plan.</p></div></details></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="/" aria-label="S.M.K Supply Chain, home"><b>S.<span>M</span>.K</b><small>SUPPLY CHAIN</small></a>
+        <p>China sourcing and import coordination for Canadian businesses, from our office in Calgary, Alberta.</p>
+      </div>
+      <div>
+        <h2>Services</h2>
+        <ul>
+          <li><a href="/services/#china-sourcing">China Sourcing</a></li>
+          <li><a href="/services/#custom-manufacturing">Product Development &amp; Custom Manufacturing</a></li>
+          <li><a href="/services/#quality-control">Quality Control</a></li>
+          <li><a href="/services/#freight-customs">Freight &amp; Customs Coordination</a></li>
+          <li><a href="/services/#warehousing">Warehousing</a></li>
+          <li><a href="/services/#final-delivery">Final Delivery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="/industries/">Industries</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/tools/container-calculator/" aria-current="page">Container Calculator</a></li>
+          <li><a href="/quote/">Request a Quote</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:info@smksupplychain.com">info@smksupplychain.com</a></li>
+          <li><a href="tel:+18254885555">825-488-5555</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=7803%2035%20St%20SE%20A%2C%20Calgary%2C%20AB" target="_blank" rel="noopener">7803 35 St SE A<br>Calgary, AB<span class="sr"> (opens Google Maps)</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bar"><span>&copy; 2026 S.M.K Supply Chain</span><span>Calgary, Alberta, Canada</span></div>
+  </div>
+</footer>
+<script src="../../main.js?v=20261102a" defer></script>
+<script src="../../calculator.js?v=20261102b" defer></script>
+</body>
+</html>

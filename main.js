@@ -105,6 +105,11 @@ document.addEventListener('click', function (e) {
     var opt = form.querySelector('#f-service option[data-key="' + svc.replace(/[^a-z-]/g, '') + '"]');
     if (opt) opt.selected = true;
   }
+  /* Cargo details sent from the container calculator */
+  ['product', 'quantity', 'details'].forEach(function (k) {
+    var v = q.get(k);
+    if (v && form.elements[k]) form.elements[k].value = v.slice(0, 2000);
+  });
   var ind = q.get('industry');
   /* [value sent in the email, label shown on the Chinese page] */
   var indLabels = {
