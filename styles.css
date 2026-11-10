@@ -1,10 +1,12 @@
 /* S.M.K Supply Chain — site styles */
+/* Archivo's ampersand is a stylised glyph that reads oddly in headings; draw only "&" from a system sans */
+@font-face{font-family:"Amp";font-weight:400 900;unicode-range:U+0026;src:local("Helvetica Neue Bold"),local("HelveticaNeue-Bold"),local("Arial Bold"),local("Arial-BoldMT"),local("Segoe UI Bold"),local("SegoeUI-Bold"),local("Roboto Bold"),local("Roboto-Bold"),local("Liberation Sans Bold")}
 :root{
   --navy:#0b2340;--navy-2:#123259;--navy-3:#1c4373;
   --ink:#16212e;--muted:#4c5a6b;--line:#dbe1e8;--soft:#f2f4f7;--white:#fff;
   --orange:#c4520a;--orange-dark:#a3440a;--orange-light:#f08a3c;
   --on-navy:#c9d4e2;
-  --head:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --head:"Amp","Archivo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --wrap:1200px;--gut:clamp(16px,4vw,40px);
 }
